@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OtPIC : 로그인</title>
+    <link rel="stylesheet" th:href="@{/lib/css/base.css}">
+    <link rel="stylesheet" th:href="@{/lib/css/sign.css}">
+</head>
+
+<body>
+    <!--- header --->
+    <div id="header">
+        <a th:href="@{/}">
+            <span id="logo">OtPIC</span>
+        </a>
+    </div>
+    <!--- wrapper --->
+    <div id="wrapper">
+        <div>
+            <div id="content-title">로그인</div>
+        </div>
+        <!--- content --->
+        <div id="content">
+            <!-- login form -->
+            <form th:action="@{/member/login}" method="post">
+                <!-- ID -->
+                <div class="input-box">
+                    <input id="user-id" type="text" name="username" value="" placeholder="아이디">
+                </div>
+                <!-- PW -->
+                <div class="input-box">
+                    <input id="user-pwd" type="password" name="password" value="" placeholder="비밀번호"
+                        autocomplete="off">
+                </div>
+                <!-- check-box -->
+                <div class="check-box">
+                    <input id="auto-login" type="checkbox" name="autoLogin" data-type="use" checked="checked">
+                    <label for="auto-login">로그인상태유지</label>
+                </div>
+                <!-- Submit -->
+                <div class="btn-area">
+                    <button type="submit" id="btn-login">
+                        <span>로그인</span>
+                    </button>
+                </div>
+            </form>
+            <div class="find-info">
+                <a th:href="@{/member/signup}" id="join">회원가입</a>
+                <a href="#" onclick="alert('준비 중입니다.')" id="idpwd-inquiry">아이디 · 비밀번호 찾기</a>
+            </div>
+        </div>
+        <!--- content --->
+    </div>
+    <!--- wrapper --->
+</body>
+
+</html>

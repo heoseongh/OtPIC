@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OtPIC : 메인</title>
+    <link rel="stylesheet" th:href="@{/lib/css/base.css}">
+    <link rel="stylesheet" th:href="@{/lib/css/index.css}">
+</head>
+
+<body>
+    <!--- header --->
+    <div id="header">
+        <div class="r-box">
+            <a th:href="@{/member/login}">
+                <span class="icon-login">
+                    <img th:src="@{/lib/images/icon-login.svg}" alt="login">
+                </span>
+            </a>
+            <a sec:authorize="isAuthenticated()">
+                <span class="text-login" sec:authentication="name" ></span>
+            </a><br>
+            <a sec:authorize="isAuthenticated()" th:href="@{/member/logout}">로그아웃</a>
+            <a sec:authorize="isAuthenticated()" th:href="@{/member/myPage}">마이페이지</a>
+        </div>
+    </div>
+    <!--- content --->
+    <div id="content">
+        <a th:href="@{/}">
+            <span id="logo">OtPIC</span>
+        </a>
+    </div>
+    <!--- footer --->
+    <div id="footer"></div>
+</body>
+
+</html>

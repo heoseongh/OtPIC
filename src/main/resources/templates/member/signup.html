@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OtPIC : 회원가입</title>
+    <link rel="stylesheet" th:href="@{/lib/css/base.css}">
+    <link rel="stylesheet" th:href="@{/lib/css/sign.css}">
+</head>
+
+<body>
+    <!--- header --->
+    <div id="header">
+        <a th:href="@{/}">
+            <span id="logo">OtPIC</span>
+        </a>
+    </div>
+    <!--- wrapper --->
+    <div id="wrapper">
+        <div>
+            <div id="content-title">회원가입</div>
+        </div>
+        <!--- content --->
+        <div id="content">
+            <!-- sign-up form -->
+            <form th:action="@{/member/signup}" th:object="${member}" method="post">
+
+                <!-- id -->
+                <div class="input-box">
+                    <input id="user-id" type="text" name="username" placeholder="아이디">
+                </div>
+                <div class="msg_box error"></div>
+                <div class="msg_box pass"></div>
+
+                <!-- pw1 -->
+                <div class="input-box">
+                    <input id="user-pwd1" type="password" name="pw" placeholder="비밀번호" autocomplete="off">
+                </div>
+                <div class="msg_box error"></div>
+                <div class="msg_box pass"></div>
+
+                <!-- pw2 -->
+                <div class="input-box">
+                    <input id="user-pwd2" type="password" name="password" placeholder="비밀번호확인" autocomplete="off">
+                </div>
+                <div class="msg_box error"></div>
+                <div class="msg_box pass"></div>
+
+                <!-- email -->
+                <div class="input-block">
+                    <span class="signup-title1">
+                        <label for="email">이메일</label>
+                    </span>
+                    <span class="signup-title2">
+                        <label for="*"> * </label>
+                    </span>
+                    <div class="input-box">
+                        <input id="user-email" type="email" name="email" placeholder="이메일">
+                    </div>
+                </div>
+                <div class="msg_box error"></div>
+
+                <!-- name -->
+                <div class="input-block">
+                    <span class="signup-title1">
+                        <label for="name">이름</label>
+                    </span>
+                    <span class="signup-title2">
+                        <label for="*"> * </label>
+                    </span>
+                    <div class="input-box">
+                        <input id="user-name" type="text" name="name" placeholder="이름을(를) 입력하세요">
+                    </div>
+                </div>
+                <div class="msg_box error"></div>
+
+                <!-- gender -->
+                <div class="input-block">
+                    <span class="signup-title1">
+                        <label for="gender">성별</label>
+                    </span>
+                    <span class="signup-title2">
+                        <label for="*"> * </label>
+                    </span>
+                    <div class="radio-article">
+                        <input id="gender-male" type="radio" name="gender" value="male" checked>남자<br><br>
+                        <input id="gender-female" type="radio" name="gender" value="female">여자
+                    </div>
+                </div>
+
+                <!-- mobile -->
+                <div class="input-block">
+                    <span class="signup-title1">
+                        <label for="mobile">연락처</label>
+                    </span>
+                    <span class="signup-title2">
+                        <label for="*"> * </label>
+                    </span>
+                    <div class="input-box">
+                        <input id="user-mobile" type="tel" name="phoneNumber" placeholder="연락처">
+                    </div>
+                </div>
+                <div class="msg_box error"></div>
+
+                <!--address-->
+                <div class="input-block">
+                    <span class="signup-title1">
+                        <label for="address">주소</label>
+                    </span>
+                    <span class="signup-title2">
+                        <label for="*"> * </label>
+                    </span>
+                    <div class="input-box">
+                        <input id="user-address1" type="text" name="address" placeholder="주소">
+                    </div>
+                    <div class="msg_box error"></div>
+                    <div class="input-box">
+                        <input id="user-address2" type="text" name="addressDetail" placeholder="상세주소">
+                    </div>
+                    <div class="msg_box error"></div>
+                </div>
+
+                <!-- submit -->
+                <div class="btn-area">
+                    <button type="submit" id="btn-signup" onClick="submitState()">
+                        <span>가입하기</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!--- content --->
+    </div>
+    <!--- wrapper --->
+    <script th:src="@{/lib/js/sign_up.js}"></script>
+</body>
+
+</html>
